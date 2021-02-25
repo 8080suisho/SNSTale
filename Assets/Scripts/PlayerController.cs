@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class PlayerController: MonoBehaviour
 {
+    Rigidbody2D rigid2d;
+
     public float speed;
     Vector3 playerPosition;
+    bool clickSwitch = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,24 +20,29 @@ public class PlayerController: MonoBehaviour
     {
         //Touch touch = Input.GetTouch(0);
         //touch.phase == TouchPhase.Began
-
+        //
         //マウスに追従させる
         if (Input.GetMouseButton(0))
         {
             playerPosition = Input.mousePosition;
+            clickSwitch = true;
         }
 
 
-        Vector3 pd = Camera.main.ScreenToWorldPoint(playerPosition) - this.transform.position;
-        Vector3 pn = pd.normalized;
+        if (clickSwitch)
+        {
+            Vector3 pd = Camera.main.ScreenToWorldPoint(playerPosition) - this.transform.position;
+            Vector3 pn = pd.normalized;
 
-        pn = new Vector3(pn.x, pn.y, 0);
+            pn = new Vector3(pn.x, pn.y, 0);
 
-        this.transform.position += pn * speed * Time.deltaTime;
+            this.transform.position += pn * speed * Time.deltaTime;
 
-        float angle = Vector3.Angle(new Vector3(0, 1, 0), pn);
-        if (pn.x > 0) angle = -angle;
-        this.transform.rotation = Quaternion.Euler(this.transform.rotation.x, this.transform.rotation.y, angle);
+            float angle = Vector3.Angle(new Vector3(0, 1, 0), pn);
+            if (pn.x > 0) angle = -angle;
+            this.transform.rotation = Quaternion.Euler(this.transform.rotation.x, this.transform.rotation.y, angle);
+        }
+
 
         //カメラ範囲外に出ないようにする処理
         transform.position = new Vector3(
