@@ -52,4 +52,9 @@ public class PlayerController: MonoBehaviour
             0f);
 
     }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        Debug.Log("ぶつかりました"); // ぶつかった相手の名前を取得
+    }
 }
