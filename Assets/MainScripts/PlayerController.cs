@@ -1,14 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerController: MonoBehaviour
 {
     Rigidbody2D rigid2d;
 
     public float speed;
+    int hP = 100;
+
     Vector3 playerPosition;
     bool clickSwitch = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -53,8 +58,5 @@ public class PlayerController: MonoBehaviour
 
     }
 
-    void OnCollisionEnter(Collision collision)
-    {
-        Debug.Log("ぶつかりました"); // ぶつかった相手の名前を取得
-    }
+    
 }
