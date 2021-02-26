@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameOverManager : MonoBehaviour
 {
@@ -19,5 +20,15 @@ public class GameOverManager : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void ToTitle()
+    {
+        SceneManager.LoadScene("Title");
+    }
+
+    public void ToMain()
+    {
+        SceneManager.LoadScene("Main");
     }
 }
