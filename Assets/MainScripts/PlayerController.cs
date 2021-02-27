@@ -8,6 +8,7 @@ public class PlayerController: MonoBehaviour
 {
     Rigidbody2D rigid2d;
 
+    public Text hPText;
     public float speed;
     int hP = 100;
 
@@ -56,7 +57,21 @@ public class PlayerController: MonoBehaviour
             Mathf.Clamp(transform.position.y, -4.5f, 3.6f),
             0f);
 
+        //HPが0になったらゲームオーバー
+        if(hP <= 0)
+        {
+            SceneManager.LoadScene("GameOver");
+        }
+
     }
 
-    
+    void OnTriggerEnter2D(Collider2D coll)
+    {
+        if (coll.gameObject.tag == "Bullet")
+        {
+            this.hP -= 20;
+            hPText.text = "しんらい : " + hP.ToString();
+        }
+    }
+
 }
