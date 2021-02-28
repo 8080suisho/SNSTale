@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public GameObject comment3;
     public GameObject comment4;
     public GameObject lieBlock;
+    public GameObject doubtBullet;
 
     public AudioClip soundSE;
     private AudioSource audioSourceSE;
@@ -20,6 +21,7 @@ public class GameManager : MonoBehaviour
    
 
     float seconds;
+    float count;
 
     // Start is called before the first frame update
     void Start()
@@ -32,26 +34,38 @@ public class GameManager : MonoBehaviour
         Invoke("AppearComment3", 3);
         Invoke("AppearComment4", 4);
 
-        if (seconds < 12)
-        {
-            InvokeRepeating("GenLie", 6, 1);
-        }
-
         
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        int randomTime = Random.Range(1, 3);
         seconds += Time.deltaTime;
+        count += Time.deltaTime;
 
         if (!firstAttackEnd)
         {
             FirstAttack();
         }
+        if (firstAttackEnd && seconds >= 6 && seconds < 11)
+        {
+            if(count >= 1)
+            {
+                count = 0;
+                GenLie();
+            }
+        }
+        if (firstAttackEnd && seconds >= 10 && seconds < 20)
+        {
+            if (count >= 2)
+            {
+                count = 0;
+                GenDoubt();
+            }
+        }
 
-        
+
     }
 
 
@@ -123,13 +137,12 @@ public class GameManager : MonoBehaviour
 
     void GenLie()
     {
-        Instantiate(lieBlock, new Vector3(-2.5f + 4 * Random.value, 6, 0), Quaternion.identity);
-        //カメラ範囲外に出ないようにする処理
-        lieBlock.transform.position = new Vector3(
-            //エリア指定して移動する
-            Mathf.Clamp(lieBlock.transform.position.x, -2.5f, 2.5f),
-            Mathf.Clamp(lieBlock.transform.position.y, -4.5f, 3.6f),
-            0f);
+        Instantiate(lieBlock, new Vector3(-2.5f + 4.3f * Random.value, 6, 0), Quaternion.identity);
+    }
+
+    void GenDoubt()
+    {
+        Instantiate(doubtBullet, new Vector3(0, 6, 0), Quaternion.identity);
     }
 
     

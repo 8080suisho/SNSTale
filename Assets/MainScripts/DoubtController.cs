@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LieController : MonoBehaviour
+public class DoubtController : MonoBehaviour
 {
     float fallSpeed;
     float rotSpeed;
@@ -10,7 +10,7 @@ public class LieController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        this.fallSpeed = 0.06f + 0.1f * Random.value;
+        this.fallSpeed = 0.04f;
         this.rotSpeed = 1f + 1f * Random.value;
     }
 
@@ -32,5 +32,4 @@ public class LieController : MonoBehaviour
             Mathf.Clamp(transform.position.y, -10f, 10),
             0f);
     }
-
 }

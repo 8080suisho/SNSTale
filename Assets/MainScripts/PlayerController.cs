@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class PlayerController: MonoBehaviour
 {
     Rigidbody2D rigid2d;
-
+    
     public Text hPText;
     public float speed;
     int hP = 100;
@@ -15,10 +15,18 @@ public class PlayerController: MonoBehaviour
     Vector3 playerPosition;
     bool clickSwitch = false;
 
+    public AudioClip soundSE;
+    private AudioSource audioSourceSE;
+
+    public Sprite normalPlayer;
+    public Sprite damagePlayer;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        audioSourceSE = gameObject.GetComponent<AudioSource>();
+        audioSourceSE.clip = soundSE;
+
     }
 
     // Update is called once per frame
@@ -69,9 +77,11 @@ public class PlayerController: MonoBehaviour
     {
         if (coll.gameObject.tag == "Bullet")
         {
+            audioSourceSE.Play();
             this.hP -= 20;
             hPText.text = "しんらい : " + hP.ToString();
         }
+
     }
 
 }
