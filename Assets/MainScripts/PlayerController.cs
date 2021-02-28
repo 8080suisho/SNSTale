@@ -18,8 +18,7 @@ public class PlayerController: MonoBehaviour
     public AudioClip soundSE;
     private AudioSource audioSourceSE;
 
-    public Sprite normalPlayer;
-    public Sprite damagePlayer;
+    public bool damageFlag = false;
 
     // Start is called before the first frame update
     void Start()
@@ -71,6 +70,8 @@ public class PlayerController: MonoBehaviour
             SceneManager.LoadScene("GameOver");
         }
 
+        damageFlag = false;
+
     }
 
     void OnTriggerEnter2D(Collider2D coll)
@@ -80,6 +81,7 @@ public class PlayerController: MonoBehaviour
             audioSourceSE.Play();
             this.hP -= 20;
             hPText.text = "しんらい : " + hP.ToString();
+            damageFlag = true;
         }
 
     }
