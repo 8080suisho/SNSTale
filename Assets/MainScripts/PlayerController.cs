@@ -16,6 +16,7 @@ public class PlayerController: MonoBehaviour
     bool clickSwitch = false;
 
     public AudioClip soundSE;
+    public AudioClip cureSE;
     private AudioSource audioSourceSE;
 
     public bool damageFlag = false;
@@ -82,6 +83,14 @@ public class PlayerController: MonoBehaviour
             this.hP -= 20;
             hPText.text = "しんらい : " + hP.ToString();
             damageFlag = true;
+        }
+
+        if (coll.gameObject.tag == "Cure")
+        {
+            audioSourceSE.PlayOneShot(cureSE);
+            this.hP += 20;
+            hPText.text = "しんらい : " + hP.ToString();
+            
         }
 
     }

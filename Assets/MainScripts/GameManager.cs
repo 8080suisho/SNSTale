@@ -12,13 +12,20 @@ public class GameManager : MonoBehaviour
     public GameObject comment4;
     public GameObject lieBlock;
     public GameObject doubtBullet;
+    public GameObject trueBullet;
+    public GameObject liarBullet;
+    public GameObject alert1;
+    public GameObject alert2;
+
+    private GameObject alert2Object;
 
     public AudioClip soundSE;
-    private AudioSource audioSourceSE;
+    public AudioClip battleBGM;
+    
+    private AudioSource audioSource;
 
     bool commentsAppear = false;
     bool firstAttackEnd = false;
-   
 
     float seconds;
     float count;
@@ -26,28 +33,25 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        audioSourceSE = gameObject.GetComponent<AudioSource>();
-        audioSourceSE.clip = soundSE;
+        audioSource = gameObject.GetComponent<AudioSource>();
+        
 
         Invoke("AppearComment1", 1);
         Invoke("AppearComment2", 2);
         Invoke("AppearComment3", 3);
         Invoke("AppearComment4", 4);
+        Invoke("BGMPlay", 5);
 
-        
     }
 
     // Update is called once per frame
     void Update()
     {
-        int randomTime = Random.Range(1, 3);
         seconds += Time.deltaTime;
         count += Time.deltaTime;
-
-        if (!firstAttackEnd)
-        {
-            FirstAttack();
-        }
+        
+        FirstAttack();
+        
         if (firstAttackEnd && seconds >= 6 && seconds < 11)
         {
             if(count >= 1)
@@ -56,7 +60,7 @@ public class GameManager : MonoBehaviour
                 GenLie();
             }
         }
-        if (firstAttackEnd && seconds >= 10 && seconds < 20)
+        if (seconds >= 10 && seconds < 20)
         {
             if (count >= 2)
             {
@@ -64,7 +68,31 @@ public class GameManager : MonoBehaviour
                 GenDoubt();
             }
         }
-
+        if (seconds >= 24 && seconds < 26)
+        {
+            if(count >= 5)
+            {
+                count = 0;
+                AppearAlert2();
+            }
+        }
+        if (seconds >= 26f && seconds < 26.1f)
+        {
+            if (count >= 0.1f)
+            {
+                count = 0;
+                BreakAlert2();
+            }
+        }
+        if (seconds >= 26.1f && seconds < 26.2f)
+        {
+            if (count >= 0.1f)
+            {
+                count = 0;
+                CommentRush();
+            }
+        }
+        
 
     }
 
@@ -72,25 +100,25 @@ public class GameManager : MonoBehaviour
     //開始時の一連の処理
     void AppearComment1()
     {
-        audioSourceSE.Play();
+        audioSource.PlayOneShot(soundSE);
         comment1.SetActive(true);
     }
 
     void AppearComment2()
     {
-        audioSourceSE.Play();
+        audioSource.PlayOneShot(soundSE);
         comment2.SetActive(true);
     }
 
     void AppearComment3()
     {
-        audioSourceSE.Play();
+        audioSource.PlayOneShot(soundSE);
         comment3.SetActive(true);
     }
 
     void AppearComment4()
     {
-        audioSourceSE.Play();
+        audioSource.PlayOneShot(soundSE);
         comment4.SetActive(true);
         commentsAppear = true;
     }
@@ -135,15 +163,67 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    //嘘攻撃
     void GenLie()
     {
         Instantiate(lieBlock, new Vector3(-2.5f + 4.3f * Random.value, 6, 0), Quaternion.identity);
     }
 
+    //うたがい攻撃
     void GenDoubt()
     {
         Instantiate(doubtBullet, new Vector3(0, 6, 0), Quaternion.identity);
     }
 
+    //コメント包囲網
+    void CommentRush()
+    {
+        audioSource.PlayOneShot(soundSE);
+        Instantiate(liarBullet, new Vector3(-2f, 3.7f, 0), Quaternion.identity);
+        Instantiate(liarBullet, new Vector3(-2f, 3f, 0), Quaternion.identity);
+        Instantiate(trueBullet, new Vector3(-2f, 2.3f, 0), Quaternion.identity);
+        Instantiate(liarBullet, new Vector3(-2f, 1.6f, 0), Quaternion.identity);
+        Instantiate(liarBullet, new Vector3(-2f, 0.9f, 0), Quaternion.identity);
+        Instantiate(liarBullet, new Vector3(-2f, 0.2f, 0), Quaternion.identity);
+        Instantiate(liarBullet, new Vector3(-2f, -0.5f, 0), Quaternion.identity);
+        Instantiate(liarBullet, new Vector3(-2f, -1.2f, 0), Quaternion.identity);
+        Instantiate(liarBullet, new Vector3(-2f, -1.9f, 0), Quaternion.identity);
+        Instantiate(liarBullet, new Vector3(-2f, -2.6f, 0), Quaternion.identity);
+        Instantiate(trueBullet, new Vector3(-2f, -3.3f, 0), Quaternion.identity);
+        Instantiate(liarBullet, new Vector3(-2f, -4f, 0), Quaternion.identity);
+        Instantiate(liarBullet, new Vector3(-2f, -4.7f, 0), Quaternion.identity);
+    }
+
+    
+
+    //BGM
+    void BGMPlay()
+    {
+        audioSource.PlayOneShot(battleBGM);
+    }
+
+    //アラート表示
+    void AppearAlart1()
+    {
+
+    }
+
+    void AppearAlert2()
+    {
+        
+        alert2Object = Instantiate(alert2, new Vector3(-1.6f, -0.4f, 0), Quaternion.identity) as GameObject;
+    }
+
+    //アラート削除
+
+    void BreakAlert1()
+    {
+
+    }
+
+    void BreakAlert2()
+    {
+        GameObject.Destroy(alert2Object);
+    }
     
 }

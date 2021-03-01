@@ -178,7 +178,14 @@ MonoBehaviour:
     type: 3}
   doubtBullet: {fileID: 2374070959213766956, guid: 8579d925e87534f5cb7b8f84d91fddc6,
     type: 3}
+  trueBullet: {fileID: 1797136408026840272, guid: 286ee0495a57a40f6b0c918ea20b8859,
+    type: 3}
+  liarBullet: {fileID: 7906926160514878539, guid: 5034f6828eb984c4aa2e72aed7508ab2,
+    type: 3}
+  alert1: {fileID: 5821725351932984047, guid: 00399a13bbd674e5190a5d7dd5cad845, type: 3}
+  alert2: {fileID: 5334323454187088481, guid: 406e6ef8637ba4d5bb82d34ef95a3ab8, type: 3}
   soundSE: {fileID: 8300000, guid: e11ec2364f0394f43aa6fefe7843a0e7, type: 3}
+  battleBGM: {fileID: 8300000, guid: a455422a322294aabb92d19da62aa322, type: 3}
 --- !u!82 &121980323
 AudioSource:
   m_ObjectHideFlags: 0
@@ -191,7 +198,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.213
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -299,7 +306,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &242435579
 RectTransform:
   m_ObjectHideFlags: 0
@@ -740,6 +747,7 @@ MonoBehaviour:
   hPText: {fileID: 960465588}
   speed: 20
   soundSE: {fileID: 8300000, guid: a19e13fefc1f543b78c362d53a97025e, type: 3}
+  cureSE: {fileID: 8300000, guid: 08f5f1884654a4ddaae235a3ac078aec, type: 3}
   damageFlag: 0
 --- !u!82 &1450156038
 AudioSource:
@@ -753,7 +761,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.214
   m_Pitch: 1
   Loop: 0
   Mute: 0
