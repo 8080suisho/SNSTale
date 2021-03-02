@@ -14,10 +14,15 @@ public class GameManager : MonoBehaviour
     public GameObject doubtBullet;
     public GameObject trueBullet;
     public GameObject liarBullet;
+    public GameObject lip;
     public GameObject alert1;
     public GameObject alert2;
+    public GameObject alert3;
 
     private GameObject alert2Object;
+    private GameObject alert3Object;
+    private GameObject alert3Object2;
+    private GameObject alert3Object3;
 
     public AudioClip soundSE;
     public AudioClip battleBGM;
@@ -70,7 +75,7 @@ public class GameManager : MonoBehaviour
         }
         if (seconds >= 24 && seconds < 26)
         {
-            if(count >= 5)
+            if(count >= 2)
             {
                 count = 0;
                 AppearAlert2();
@@ -92,9 +97,42 @@ public class GameManager : MonoBehaviour
                 CommentRush();
             }
         }
-        
+        if (seconds >= 29f && seconds < 31)
+        {
+            if (count >= 2)
+            {
+                count = 0;
+                AppearAlert3();
+            }
+        }
+        if (seconds >= 31f && seconds < 31.1f)
+        {
+            if (count >= 0.1f)
+            {
+                count = 0;
+                BreakAlert3();
+            }
+        }
+        if (seconds >= 31.1f && seconds < 31.2f)
+        {
+            if (count >= 0.1f)
+            {
+                count = 0;
+                LipMissile();
+            }
+        }
+        if (seconds >= 32 && seconds < 40)
+        {
+            if (count >= 1)
+            {
+                count = 0;
+                GenLie();
+            }
+        }
+
 
     }
+
 
 
     //開始時の一連の処理
@@ -161,12 +199,14 @@ public class GameManager : MonoBehaviour
                 firstAttackEnd = true;
             }
         }
+
+        
     }
 
     //嘘攻撃
     void GenLie()
     {
-        Instantiate(lieBlock, new Vector3(-2.5f + 4.3f * Random.value, 6, 0), Quaternion.identity);
+        Instantiate(lieBlock, new Vector3(-2f + 4.3f * Random.value, 6, 0), Quaternion.identity);
     }
 
     //うたがい攻撃
@@ -194,6 +234,13 @@ public class GameManager : MonoBehaviour
         Instantiate(liarBullet, new Vector3(-2f, -4.7f, 0), Quaternion.identity);
     }
 
+    //口紅発射
+    void LipMissile()
+    {
+        Instantiate(lip, new Vector3(2f, -6.5f, 0), Quaternion.identity);
+        Instantiate(lip, new Vector3(0f, -6.5f, 0), Quaternion.identity);
+        Instantiate(lip, new Vector3(-2f, -6.5f, 0), Quaternion.identity);
+    }
     
 
     //BGM
@@ -201,6 +248,7 @@ public class GameManager : MonoBehaviour
     {
         audioSource.PlayOneShot(battleBGM);
     }
+
 
     //アラート表示
     void AppearAlart1()
@@ -210,12 +258,18 @@ public class GameManager : MonoBehaviour
 
     void AppearAlert2()
     {
-        
         alert2Object = Instantiate(alert2, new Vector3(-1.6f, -0.4f, 0), Quaternion.identity) as GameObject;
     }
 
-    //アラート削除
+    void AppearAlert3()
+    {
+        alert3Object = Instantiate(alert3, new Vector3(2f, -4f, 0), Quaternion.identity) as GameObject;
+        alert3Object2 = Instantiate(alert3, new Vector3(0f, -4f, 0), Quaternion.identity) as GameObject;
+        alert3Object3 = Instantiate(alert3, new Vector3(-2f, -4f, 0), Quaternion.identity) as GameObject;
+    }
 
+
+    //アラート削除
     void BreakAlert1()
     {
 
@@ -224,6 +278,13 @@ public class GameManager : MonoBehaviour
     void BreakAlert2()
     {
         GameObject.Destroy(alert2Object);
+    }
+
+    void BreakAlert3()
+    {
+        GameObject.Destroy(alert3Object);
+        GameObject.Destroy(alert3Object2);
+        GameObject.Destroy(alert3Object3);
     }
     
 }

@@ -182,8 +182,10 @@ MonoBehaviour:
     type: 3}
   liarBullet: {fileID: 7906926160514878539, guid: 5034f6828eb984c4aa2e72aed7508ab2,
     type: 3}
+  lip: {fileID: 906512421097204962, guid: d583e825fb06a4b97b9d99a209a575ba, type: 3}
   alert1: {fileID: 5821725351932984047, guid: 00399a13bbd674e5190a5d7dd5cad845, type: 3}
   alert2: {fileID: 5334323454187088481, guid: 406e6ef8637ba4d5bb82d34ef95a3ab8, type: 3}
+  alert3: {fileID: 2810600467920682387, guid: 8b26e808b3b2f45b3902435fa4fcf472, type: 3}
   soundSE: {fileID: 8300000, guid: e11ec2364f0394f43aa6fefe7843a0e7, type: 3}
   battleBGM: {fileID: 8300000, guid: a455422a322294aabb92d19da62aa322, type: 3}
 --- !u!82 &121980323
@@ -306,7 +308,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &242435579
 RectTransform:
   m_ObjectHideFlags: 0

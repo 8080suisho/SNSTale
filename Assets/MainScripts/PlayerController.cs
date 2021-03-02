@@ -20,7 +20,7 @@ public class PlayerController: MonoBehaviour
     private AudioSource audioSourceSE;
 
     public bool damageFlag = false;
-
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -72,7 +72,7 @@ public class PlayerController: MonoBehaviour
         }
 
         damageFlag = false;
-
+        
     }
 
     void OnTriggerEnter2D(Collider2D coll)
