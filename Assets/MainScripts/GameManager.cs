@@ -11,6 +11,12 @@ public class GameManager : MonoBehaviour
     public GameObject comment3;
     public GameObject comment4;
 
+    public GameObject comment5;
+    public GameObject comment6;
+    public GameObject comment7;
+    public GameObject comment8;
+    public GameObject comment9;
+
 
     public GameObject lieBlock;
     public GameObject doubtBullet;
@@ -220,7 +226,55 @@ public class GameManager : MonoBehaviour
                 CommentFinale();
             }
         }
-
+        if (seconds >= 74f && seconds < 75f)
+        {
+            if (count >= 1f)
+            {
+                count = 0;
+                audioSource.Stop();
+                AppearComment5();
+            }
+        }
+        if (seconds >= 75f && seconds < 76f)
+        {
+            if (count >= 1f)
+            {
+                count = 0;
+                AppearComment6();
+            }
+        }
+        if (seconds >= 76f && seconds < 77f)
+        {
+            if (count >= 1f)
+            {
+                count = 0;
+                AppearComment7();
+            }
+        }
+        if (seconds >= 77f && seconds < 78f)
+        {
+            if (count >= 1f)
+            {
+                count = 0;
+                AppearComment8();
+            }
+        }
+        if (seconds >= 80 && seconds < 81f)
+        {
+            if (count >= 1f)
+            {
+                count = 0;
+                AppearComment9();
+            }
+        }
+        if (seconds >= 82 && seconds < 83f)
+        {
+            if (count >= 1f)
+            {
+                count = 0;
+                ToClear();
+            }
+        }
 
     }
 
@@ -293,6 +347,38 @@ public class GameManager : MonoBehaviour
 
         
     }
+
+    //エンディング
+    void AppearComment5()
+    {
+        audioSource.PlayOneShot(soundSE);
+        Instantiate(comment5, new Vector3(-1.5f, 3f, 0), Quaternion.identity);
+    }
+
+    void AppearComment6()
+    {
+        audioSource.PlayOneShot(soundSE);
+        Instantiate(comment6, new Vector3(-1.5f, 2.3f, 0), Quaternion.identity);
+    }
+
+    void AppearComment7()
+    {
+        audioSource.PlayOneShot(soundSE);
+        Instantiate(comment7, new Vector3(-1.5f, 1.6f, 0), Quaternion.identity);
+    }
+
+    void AppearComment8()
+    {
+        audioSource.PlayOneShot(soundSE);
+        Instantiate(comment8, new Vector3(-1.5f, 0.9f, 0), Quaternion.identity);
+    }
+    void AppearComment9()
+    {
+        audioSource.PlayOneShot(soundSE);
+        Instantiate(comment9, new Vector3(-2f, 0.2f, 0), Quaternion.identity);
+
+    }
+
 
     //嘘攻撃
     void GenLie()
@@ -463,5 +549,10 @@ public class GameManager : MonoBehaviour
         GameObject.Destroy(alert3Object2);
         GameObject.Destroy(alert3Object3);
     }
-    
+
+    //クリア画面へ
+    void ToClear()
+    {
+        SceneManager.LoadScene("GameClear");
+    }
 }
