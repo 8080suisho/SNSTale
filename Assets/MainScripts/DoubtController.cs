@@ -28,7 +28,7 @@ public class DoubtController : MonoBehaviour
         //カメラ範囲外に出ないようにする処理
         transform.position = new Vector3(
             //エリア指定して移動する
-            Mathf.Clamp(transform.position.x, -2.5f, 2.5f),
+            Mathf.Clamp(transform.position.x, -2f, 2f),
             Mathf.Clamp(transform.position.y, -10f, 10),
             0f);
     }

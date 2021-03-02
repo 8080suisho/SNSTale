@@ -15,10 +15,12 @@ public class GameManager : MonoBehaviour
     public GameObject trueBullet;
     public GameObject liarBullet;
     public GameObject lip;
+    public GameObject strawberry;
     public GameObject alert1;
     public GameObject alert2;
     public GameObject alert3;
 
+    
     private GameObject alert2Object;
     private GameObject alert3Object;
     private GameObject alert3Object2;
@@ -127,6 +129,15 @@ public class GameManager : MonoBehaviour
             {
                 count = 0;
                 GenLie();
+            }
+        }
+        if (seconds >= 40 && seconds < 50)
+        {
+            if (count >= 3.3)
+            {
+                count = 0;
+                StrawberryCanon();
+                StrawberryCanon2();
             }
         }
 
@@ -240,6 +251,21 @@ public class GameManager : MonoBehaviour
         Instantiate(lip, new Vector3(2f, -6.5f, 0), Quaternion.identity);
         Instantiate(lip, new Vector3(0f, -6.5f, 0), Quaternion.identity);
         Instantiate(lip, new Vector3(-2f, -6.5f, 0), Quaternion.identity);
+    }
+
+    //いちご弾
+    void StrawberryCanon()
+    {
+        Instantiate(strawberry, new Vector3(1.2f, 3.6f, 0), Quaternion.identity);
+        Instantiate(strawberry, new Vector3(-0.5f, 3.6f, 0), Quaternion.identity);
+        Instantiate(strawberry, new Vector3(-2.2f, 3.6f, 0), Quaternion.identity);
+    }
+
+    void StrawberryCanon2()
+    {
+        Instantiate(strawberry, new Vector3(-1.2f, 4.6f, 0), Quaternion.identity);
+        Instantiate(strawberry, new Vector3(0.5f, 4.6f, 0), Quaternion.identity);
+        Instantiate(strawberry, new Vector3(2.2f, 4.6f, 0), Quaternion.identity);
     }
     
 
