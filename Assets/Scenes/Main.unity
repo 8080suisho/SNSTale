@@ -182,6 +182,10 @@ MonoBehaviour:
     type: 3}
   liarBullet: {fileID: 7906926160514878539, guid: 5034f6828eb984c4aa2e72aed7508ab2,
     type: 3}
+  trueBullet2: {fileID: 3895690716982798106, guid: 7fa72e316bd1f4fa49e89a955f9faae4,
+    type: 3}
+  liarBullet2: {fileID: 5192965825890558400, guid: 88c6c0aa1e75a47fe9cf55620ee0f42b,
+    type: 3}
   lip: {fileID: 906512421097204962, guid: d583e825fb06a4b97b9d99a209a575ba, type: 3}
   strawberry: {fileID: 453880579718699524, guid: 7b16c5d7b7dca4fed8396e727f2027de,
     type: 3}

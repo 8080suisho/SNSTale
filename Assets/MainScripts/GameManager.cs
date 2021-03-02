@@ -10,17 +10,23 @@ public class GameManager : MonoBehaviour
     public GameObject comment2;
     public GameObject comment3;
     public GameObject comment4;
+
+
     public GameObject lieBlock;
     public GameObject doubtBullet;
+
     public GameObject trueBullet;
     public GameObject liarBullet;
+    public GameObject trueBullet2;
+    public GameObject liarBullet2;
+
     public GameObject lip;
     public GameObject strawberry;
     public GameObject alert1;
     public GameObject alert2;
     public GameObject alert3;
 
-    
+    private GameObject alert2Object2;
     private GameObject alert2Object;
     private GameObject alert3Object;
     private GameObject alert3Object2;
@@ -133,11 +139,85 @@ public class GameManager : MonoBehaviour
         }
         if (seconds >= 40 && seconds < 50)
         {
-            if (count >= 3.3)
+            if (count >= 3.4)
             {
                 count = 0;
                 StrawberryCanon();
                 StrawberryCanon2();
+            }
+        }
+        if (seconds >= 60 && seconds < 62)
+        {
+            if (count >= 2)
+            {
+                count = 0;
+                AppearAlert1();
+            }
+        }
+        if (seconds >= 62 && seconds < 62.1f)
+        {
+            if (count >= 0.1f)
+            {
+                count = 0;
+                BreakAlert1();
+            }
+        }
+        if (seconds >= 62.1f && seconds < 62.2f)
+        {
+            if (count >= 0.1f)
+            {
+                count = 0;
+                CommentRush2();
+            }
+        }
+        if (seconds >= 63 && seconds < 65)
+        {
+            if (count >= 2)
+            {
+                count = 0;
+                AppearAlert2();
+            }
+        }
+        if (seconds >= 65 && seconds < 65.1f)
+        {
+            if (count >= 0.1f)
+            {
+                count = 0;
+                BreakAlert2();
+            }
+        }
+        if (seconds >= 65.1f && seconds < 65.2f)
+        {
+            if (count >= 0.1f)
+            {
+                count = 0;
+                CommentRush3();
+            }
+        }
+        if (seconds >= 66 && seconds < 69)
+        {
+            if (count >= 2)
+            {
+                count = 0;
+                AppearAlert1();
+                AppearAlert2();
+            }
+        }
+        if (seconds >= 69 && seconds < 69.1f)
+        {
+            if (count >= 0.1f)
+            {
+                count = 0;
+                BreakAlert1();
+                BreakAlert2();
+            }
+        }
+        if (seconds >= 69.1f && seconds < 69.2f)
+        {
+            if (count >= 0.1f)
+            {
+                count = 0;
+                CommentFinale();
             }
         }
 
@@ -245,6 +325,77 @@ public class GameManager : MonoBehaviour
         Instantiate(liarBullet, new Vector3(-2f, -4.7f, 0), Quaternion.identity);
     }
 
+    void CommentRush2()
+    {
+        audioSource.PlayOneShot(soundSE);
+        Instantiate(liarBullet2, new Vector3(2f, 3.7f, 0), Quaternion.identity);
+        Instantiate(trueBullet2, new Vector3(2f, 3f, 0), Quaternion.identity);
+        Instantiate(liarBullet2, new Vector3(2f, 2.3f, 0), Quaternion.identity);
+        Instantiate(liarBullet2, new Vector3(2f, 1.6f, 0), Quaternion.identity);
+        Instantiate(liarBullet2, new Vector3(2f, 0.9f, 0), Quaternion.identity);
+        Instantiate(liarBullet2, new Vector3(2f, 0.2f, 0), Quaternion.identity);
+        Instantiate(liarBullet2, new Vector3(2f, -0.5f, 0), Quaternion.identity);
+        Instantiate(liarBullet2, new Vector3(2f, -1.2f, 0), Quaternion.identity);
+        Instantiate(liarBullet2, new Vector3(2f, -1.9f, 0), Quaternion.identity);
+        Instantiate(liarBullet2, new Vector3(2f, -2.6f, 0), Quaternion.identity);
+        Instantiate(liarBullet2, new Vector3(2f, -3.3f, 0), Quaternion.identity);
+        Instantiate(liarBullet2, new Vector3(2f, -4f, 0), Quaternion.identity);
+        Instantiate(liarBullet2, new Vector3(2f, -4.7f, 0), Quaternion.identity);
+    }
+
+    void CommentRush3()
+    {
+        audioSource.PlayOneShot(soundSE);
+        Instantiate(liarBullet, new Vector3(-2f, 3.7f, 0), Quaternion.identity);
+        Instantiate(liarBullet, new Vector3(-2f, 3f, 0), Quaternion.identity);
+        Instantiate(liarBullet, new Vector3(-2f, 2.3f, 0), Quaternion.identity);
+        Instantiate(liarBullet, new Vector3(-2f, 1.6f, 0), Quaternion.identity);
+        Instantiate(liarBullet, new Vector3(-2f, 0.9f, 0), Quaternion.identity);
+        Instantiate(liarBullet, new Vector3(-2f, 0.2f, 0), Quaternion.identity);
+        Instantiate(liarBullet, new Vector3(-2f, -0.5f, 0), Quaternion.identity);
+        Instantiate(liarBullet, new Vector3(-2f, -1.2f, 0), Quaternion.identity);
+        Instantiate(liarBullet, new Vector3(-2f, -1.9f, 0), Quaternion.identity);
+        Instantiate(liarBullet, new Vector3(-2f, -2.6f, 0), Quaternion.identity);
+        Instantiate(liarBullet, new Vector3(-2f, -3.3f, 0), Quaternion.identity);
+        Instantiate(trueBullet, new Vector3(-2f, -4f, 0), Quaternion.identity);
+        Instantiate(liarBullet, new Vector3(-2f, -4.7f, 0), Quaternion.identity);
+    }
+
+    void CommentFinale()
+    {
+        audioSource.PlayOneShot(soundSE);
+        Instantiate(liarBullet2, new Vector3(2f, 3.7f, 0), Quaternion.identity);
+        Instantiate(liarBullet2, new Vector3(2f, 3f, 0), Quaternion.identity);
+        Instantiate(liarBullet2, new Vector3(2f, 2.3f, 0), Quaternion.identity);
+        Instantiate(liarBullet2, new Vector3(2f, 1.6f, 0), Quaternion.identity);
+        Instantiate(liarBullet2, new Vector3(2f, 0.9f, 0), Quaternion.identity);
+        Instantiate(trueBullet2, new Vector3(2f, 0.2f, 0), Quaternion.identity);
+        Instantiate(liarBullet2, new Vector3(2f, -0.5f, 0), Quaternion.identity);
+        Instantiate(liarBullet2, new Vector3(2f, -1.2f, 0), Quaternion.identity);
+        Instantiate(liarBullet2, new Vector3(2f, -1.9f, 0), Quaternion.identity);
+        Instantiate(liarBullet2, new Vector3(2f, -2.6f, 0), Quaternion.identity);
+        Instantiate(liarBullet2, new Vector3(2f, -3.3f, 0), Quaternion.identity);
+        Instantiate(liarBullet2, new Vector3(2f, -4f, 0), Quaternion.identity);
+        Instantiate(liarBullet2, new Vector3(2f, -4.7f, 0), Quaternion.identity);
+
+        Instantiate(liarBullet, new Vector3(-2f, 3.7f, 0), Quaternion.identity);
+        Instantiate(liarBullet, new Vector3(-2f, 3f, 0), Quaternion.identity);
+        Instantiate(liarBullet, new Vector3(-2f, 2.3f, 0), Quaternion.identity);
+        Instantiate(liarBullet, new Vector3(-2f, 1.6f, 0), Quaternion.identity);
+        Instantiate(liarBullet, new Vector3(-2f, 0.9f, 0), Quaternion.identity);
+        Instantiate(trueBullet, new Vector3(-2f, 0.2f, 0), Quaternion.identity);
+        Instantiate(liarBullet, new Vector3(-2f, -0.5f, 0), Quaternion.identity);
+        Instantiate(liarBullet, new Vector3(-2f, -1.2f, 0), Quaternion.identity);
+        Instantiate(liarBullet, new Vector3(-2f, -1.9f, 0), Quaternion.identity);
+        Instantiate(liarBullet, new Vector3(-2f, -2.6f, 0), Quaternion.identity);
+        Instantiate(liarBullet, new Vector3(-2f, -3.3f, 0), Quaternion.identity);
+        Instantiate(liarBullet, new Vector3(-2f, -4f, 0), Quaternion.identity);
+        Instantiate(liarBullet, new Vector3(-2f, -4.7f, 0), Quaternion.identity);
+    }
+
+
+
+
     //口紅発射
     void LipMissile()
     {
@@ -277,9 +428,9 @@ public class GameManager : MonoBehaviour
 
 
     //アラート表示
-    void AppearAlart1()
-    {
-
+    void AppearAlert1()
+    { 
+        alert2Object2 = Instantiate(alert2, new Vector3(1.6f, -0.4f, 0), Quaternion.identity) as GameObject;
     }
 
     void AppearAlert2()
@@ -298,7 +449,7 @@ public class GameManager : MonoBehaviour
     //アラート削除
     void BreakAlert1()
     {
-
+        GameObject.Destroy(alert2Object2);
     }
 
     void BreakAlert2()
