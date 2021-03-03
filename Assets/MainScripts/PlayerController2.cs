@@ -4,10 +4,10 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class PlayerController: MonoBehaviour
+public class PlayerController2 : MonoBehaviour
 {
     Rigidbody2D rigid2d;
-    
+
     public Text hPText;
     public float speed;
     int hP = 100;
@@ -21,8 +21,8 @@ public class PlayerController: MonoBehaviour
 
     public bool damageFlag = false;
 
-    
-    
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -68,13 +68,13 @@ public class PlayerController: MonoBehaviour
             0f);
 
         //HPが0になったらゲームオーバー
-        if(hP <= 0)
+        if (hP <= 0)
         {
-            SceneManager.LoadScene("GameOver");
+            SceneManager.LoadScene("GameOver2");
         }
 
         damageFlag = false;
-        
+
     }
 
     void OnTriggerEnter2D(Collider2D coll)
@@ -92,7 +92,7 @@ public class PlayerController: MonoBehaviour
             audioSourceSE.PlayOneShot(cureSE);
             this.hP += 20;
             hPText.text = "しんらい : " + hP.ToString();
-            
+
         }
 
     }

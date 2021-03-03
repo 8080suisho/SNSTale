@@ -25,9 +25,11 @@ public class GameManager2 : MonoBehaviour
     float seconds;
     float count;
 
+   
     // Start is called before the first frame update
     void Start()
     {
+        
 
         audioSource = gameObject.GetComponent<AudioSource>();
 
