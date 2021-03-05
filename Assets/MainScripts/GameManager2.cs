@@ -13,9 +13,20 @@ public class GameManager2 : MonoBehaviour
 
     public GameObject foodBullet;
     public GameObject foodBullet2;
+    public GameObject potatobeem1;
+    public GameObject potatobeem2;
+    public GameObject potatobeem3;
+    public GameObject potatobeem4;
+    public GameObject potatocase;
+    public GameObject hotdog;
+    public GameObject alert2;
+    private GameObject potatocaseObject;
+    private GameObject hotdogObject;
+    private GameObject alert2Object;
 
     public AudioClip soundSE;
     public AudioClip battleBGM;
+    
 
     private AudioSource audioSource;
 
@@ -30,7 +41,6 @@ public class GameManager2 : MonoBehaviour
     void Start()
     {
         
-
         audioSource = gameObject.GetComponent<AudioSource>();
 
 
@@ -83,6 +93,77 @@ public class GameManager2 : MonoBehaviour
                 FoodStrike2();
             }
         }
+        if (seconds >= 17 && seconds < 18)
+        {
+            if (count >= 1)
+            {
+                count = 0;
+                AppearPotatocase();
+               
+            }
+        }
+        if (seconds >= 18 && seconds < 26)
+        {
+            if (count >= 1.5)
+            {
+                count = 0;
+                Potatobeem1();
+                Potatobeem2();
+
+            }
+        }
+        if (seconds >= 27 && seconds < 28)
+        {
+            if (count >= 1)
+            {
+                count = 0;
+                BreakPotatocase();
+            }
+        }
+        if (seconds >= 28 && seconds < 35)
+        {
+            if (count >= 1.5)
+            {
+                count = 0;
+                PotatoBar();
+            }
+        }
+        if (seconds >= 37 && seconds < 38)
+        {
+            if (count >= 1)
+            {
+                count = 0;
+                AppearAlert2();
+            }
+        }
+        if (seconds >= 38 && seconds < 39)
+        {
+            if (count >= 1)
+            {
+                count = 0;
+                BreakAlert2();
+            }
+        }
+        if (seconds >= 39 && seconds < 40)
+        {
+            if (count >= 1)
+            {
+                count = 0;
+                AppearHotdog();
+            }
+        }
+        if (seconds >= 50 && seconds < 51)
+        {
+            if (count >= 1)
+            {
+                count = 0;
+                BreakHotdog();
+            }
+        }
+
+
+
+
 
     }
 
@@ -163,19 +244,80 @@ public class GameManager2 : MonoBehaviour
         audioSource.PlayOneShot(battleBGM);
     }
 
+    
+
     //ハンバーガーミサイル
     void FoodStrike()
     {
-        Instantiate(foodBullet, new Vector3(-3.5f, 3.2f, 0), Quaternion.identity);
-        Instantiate(foodBullet, new Vector3(-3.5f, 0.6f, 0), Quaternion.identity);
-        Instantiate(foodBullet, new Vector3(-3.5f, -2, 0), Quaternion.identity);
+        Instantiate(foodBullet, new Vector3(-3.5f, 2.8f, 0), Quaternion.identity);
+        Instantiate(foodBullet, new Vector3(-3.5f, 0.2f, 0), Quaternion.identity);
+        Instantiate(foodBullet, new Vector3(-3.5f, -2.4f, 0), Quaternion.identity);
     }
 
     void FoodStrike2()
     {
-        Instantiate(foodBullet2, new Vector3(3.5f, 1.9f, 0), Quaternion.identity);
-        Instantiate(foodBullet2, new Vector3(3.5f, -0.7f, 0), Quaternion.identity);
-        Instantiate(foodBullet2, new Vector3(3.5f, -3.3f, 0), Quaternion.identity);
+        Instantiate(foodBullet2, new Vector3(3.5f, 1.5f, 0), Quaternion.identity);
+        Instantiate(foodBullet2, new Vector3(3.5f, -1.1f, 0), Quaternion.identity);
+        Instantiate(foodBullet2, new Vector3(3.5f, -3.7f, 0), Quaternion.identity);
     }
 
+    //ポテトビーム
+
+    //ケース表示
+    void AppearPotatocase()
+    {
+        potatocaseObject = Instantiate(potatocase, new Vector3(0, -4, 0), Quaternion.identity) as GameObject;
+    }
+
+    //ケース削除
+    void BreakPotatocase()
+    {
+        GameObject.Destroy(potatocaseObject);
+    }
+
+    //ポテト生成
+    void Potatobeem1()
+    {
+        Instantiate(potatobeem1, new Vector3(-2f + 4.3f * Random.value, -6, 0), Quaternion.identity);
+    }
+
+    void Potatobeem2()
+    {
+        Instantiate(potatobeem2, new Vector3(-2f + 4.3f * Random.value, -6, 0), Quaternion.identity);
+        Instantiate(potatobeem2, new Vector3(-2f + 4.3f * Random.value, -6, 0), Quaternion.identity);
+    }
+
+    //ポテトアゲイン
+
+    //ポテト生成
+    void PotatoBar()
+    {
+        Instantiate(potatobeem3, new Vector3(-1.75f, 7, 0), Quaternion.identity);
+        Instantiate(potatobeem4, new Vector3(1.75f, 11.5f, 0), Quaternion.identity);
+    }
+
+
+    //ホットドッグ風車
+    void AppearHotdog()
+    {
+        hotdogObject = Instantiate(hotdog, new Vector3(0, 0, 0), Quaternion.identity) as GameObject;
+    }
+
+    //ホットドッグ削除
+    void BreakHotdog()
+    {
+        GameObject.Destroy(hotdogObject);
+    }
+
+    //アラート
+    void AppearAlert2()
+    {
+        alert2Object = Instantiate(alert2, new Vector3(0f, -0.4f, 0), Quaternion.identity) as GameObject;
+    }
+
+    //アラート削除
+    void BreakAlert2()
+    {
+        GameObject.Destroy(alert2Object);
+    }
 }

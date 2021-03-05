@@ -178,6 +178,18 @@ MonoBehaviour:
     type: 3}
   foodBullet2: {fileID: 4915462607044399288, guid: b0f38bb5a47554aeeb5b91f69f99db5c,
     type: 3}
+  potatobeem1: {fileID: 1474015910356850134, guid: 3b7191114fa3f40f5a017a9c4c3bbd06,
+    type: 3}
+  potatobeem2: {fileID: 8791339339018849104, guid: 3038bd04b81e44b10be0f3c76d2dfd9a,
+    type: 3}
+  potatobeem3: {fileID: 4251770684920122916, guid: f34e9b5c57db14f97aded19346951399,
+    type: 3}
+  potatobeem4: {fileID: 4858819719322281054, guid: 3d62f97b92e364792983a342d8c24a3f,
+    type: 3}
+  potatocase: {fileID: 8034657189221351223, guid: 7097db23e7128419fa4480f5129e6266,
+    type: 3}
+  hotdog: {fileID: 5764294625744969802, guid: 197cdc3c36e284ad2a4b4f71911733a2, type: 3}
+  alert2: {fileID: 5334323454187088481, guid: 406e6ef8637ba4d5bb82d34ef95a3ab8, type: 3}
   soundSE: {fileID: 8300000, guid: e11ec2364f0394f43aa6fefe7843a0e7, type: 3}
   battleBGM: {fileID: 8300000, guid: 6b7a0e3c1947e435e9e8999199b648a9, type: 3}
 --- !u!82 &121980323
