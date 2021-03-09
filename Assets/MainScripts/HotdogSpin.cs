@@ -21,11 +21,11 @@ public class HotdogSpin : MonoBehaviour
 
         if(count < 5)
         {
-            transform.Rotate(0, 0, 1.5f);
+            transform.Rotate(0, 0, 1.2f);
         }
         if(count >= 5)
         {
-            transform.Rotate(0, 0, -1.5f);
+            transform.Rotate(0, 0, -1.2f);
         }
     }
 }

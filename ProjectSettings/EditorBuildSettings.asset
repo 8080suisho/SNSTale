@@ -15,12 +15,21 @@ EditorBuildSettings:
     path: Assets/Scenes/Main.unity
     guid: 4a959885936724e20b62519837c2ca71
   - enabled: 1
-    path: Assets/Scenes/GameOver.unity
-    guid: 5120681a91e5a4e00bd09f7c4a38376c
+    path: Assets/Scenes/Main2.unity
+    guid: b2f001020dfa446ccb98bb5933e55b04
   - enabled: 1
     path: Assets/Scenes/GameClear.unity
     guid: 0c8042f36678a4d41be7bc053bddda6a
   - enabled: 1
+    path: Assets/Scenes/GameOver.unity
+    guid: 5120681a91e5a4e00bd09f7c4a38376c
+  - enabled: 1
     path: Assets/Scenes/GameOver2.unity
     guid: b46f46ee361604feeb3104fcfe653f65
+  - enabled: 1
+    path: Assets/Scenes/StageSelect.unity
+    guid: 92f2176445c4147e09316d739e483d4d
+  - enabled: 1
+    path: Assets/Scenes/Tutorial.unity
+    guid: 32c947146393942688f00aeb747b45da
   m_configObjects: {}
