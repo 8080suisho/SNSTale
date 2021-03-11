@@ -18,8 +18,7 @@ public class StageSelectController : MonoBehaviour
     }
 
     public void ToTutorial()
-    {
-        Debug.Log("押されました");
+    {  
         SceneManager.LoadScene("Tutorial");
     }
 

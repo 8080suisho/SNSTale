@@ -19,6 +19,6 @@ public class TitleManager : MonoBehaviour
 
     public void GameStart()
     {
-        SceneManager.LoadScene("Main");
+        SceneManager.LoadScene("StageSelect");
     }
 }
