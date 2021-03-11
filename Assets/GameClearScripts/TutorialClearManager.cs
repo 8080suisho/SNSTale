@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameClearManager : MonoBehaviour
+public class TutorialClearManager : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -19,7 +19,7 @@ public class GameClearManager : MonoBehaviour
 
     public void RePlay()
     {
-        SceneManager.LoadScene("Main");
+        SceneManager.LoadScene("Tutorial");
     }
 
     public void ToStageSelect()
