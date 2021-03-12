@@ -19,7 +19,8 @@ public class PlayerController2 : MonoBehaviour
     public AudioClip cureSE;
     private AudioSource audioSourceSE;
 
-    public bool damageFlag = false;
+    public bool damageFlag2 = false;
+    public bool cureFlag2 = false;
     
 
 
@@ -73,7 +74,8 @@ public class PlayerController2 : MonoBehaviour
             SceneManager.LoadScene("GameOver2");
         }
 
-        damageFlag = false;
+        damageFlag2 = false;
+        cureFlag2 = false;
         
 
     }
@@ -85,7 +87,7 @@ public class PlayerController2 : MonoBehaviour
             audioSourceSE.Play();
             this.hP -= 20;
             hPText.text = "しんらい : " + hP.ToString();
-            damageFlag = true;
+            damageFlag2 = true;
         }
 
         if (coll.gameObject.tag == "Cure")
@@ -93,7 +95,7 @@ public class PlayerController2 : MonoBehaviour
             audioSourceSE.PlayOneShot(cureSE);
             this.hP += 20;
             hPText.text = "しんらい : " + hP.ToString();
-            
+            cureFlag2 = true;
         }
 
     }

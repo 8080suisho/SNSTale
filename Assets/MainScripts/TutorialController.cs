@@ -155,17 +155,17 @@ public class TutorialController : MonoBehaviour
         if (tcom1 != null && seconds >= 4.5 && commentsAppear && tcom2 != null && tcom3 != null)
         {
             tcom1.transform.position += new Vector3(0.1f, 0, 0);
-            if (tcom1.transform.position.x > 4)
+            if (tcom1.transform.position.x > 6)
             {
                 GameObject.Destroy(tcom1);
             }
             tcom2.transform.position += new Vector3(0.1f, 0, 0);
-            if (tcom2.transform.position.x > 4)
+            if (tcom2.transform.position.x > 6)
             {
                 GameObject.Destroy(tcom2);
             }
             tcom3.transform.position += new Vector3(0.1f, 0, 0);
-            if (tcom3.transform.position.x > 4)
+            if (tcom3.transform.position.x > 6)
             {
                 GameObject.Destroy(tcom3);
             }
@@ -197,17 +197,17 @@ public class TutorialController : MonoBehaviour
         if (tcom4Object != null &&  tcom5Object != null && tcom6Object != null)
         {
             tcom4Object.transform.position += new Vector3(0.1f, 0, 0);
-            if (tcom4Object.transform.position.x > 4)
+            if (tcom4Object.transform.position.x > 6)
             {
                 GameObject.Destroy(tcom4Object);
             }
             tcom5Object.transform.position += new Vector3(0.1f, 0, 0);
-            if (tcom5Object.transform.position.x > 4)
+            if (tcom5Object.transform.position.x > 6)
             {
                 GameObject.Destroy(tcom5Object);
             }
             tcom6Object.transform.position += new Vector3(0.1f, 0, 0);
-            if (tcom6Object.transform.position.x > 4)
+            if (tcom6Object.transform.position.x > 6)
             {
                 GameObject.Destroy(tcom6Object);
             }

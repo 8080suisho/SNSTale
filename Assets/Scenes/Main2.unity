@@ -193,6 +193,8 @@ MonoBehaviour:
   dropFood: {fileID: 649901498884211561, guid: afb067b9182154a5daaa12c2a854844d, type: 3}
   dropCureFood: {fileID: 4469887309861065923, guid: a78d1265d093845d38729368d55a9666,
     type: 3}
+  potatoWall: {fileID: 8843298015881436243, guid: 7e29c7c622c3740cb9aa44804002faf4,
+    type: 3}
   soundSE: {fileID: 8300000, guid: e11ec2364f0394f43aa6fefe7843a0e7, type: 3}
   battleBGM: {fileID: 8300000, guid: 6b7a0e3c1947e435e9e8999199b648a9, type: 3}
 --- !u!82 &121980323
@@ -308,14 +310,14 @@ GameObject:
   - component: {fileID: 242435579}
   - component: {fileID: 242435581}
   - component: {fileID: 242435580}
-  - component: {fileID: 242435582}
+  - component: {fileID: 242435583}
   m_Layer: 5
   m_Name: DamageImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &242435579
 RectTransform:
   m_ObjectHideFlags: 0
@@ -372,7 +374,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 242435578}
   m_CullTransparentMesh: 0
---- !u!114 &242435582
+--- !u!114 &242435583
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -381,7 +383,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 242435578}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2cdb2d58b9b9c402db63d97f8b3d8e53, type: 3}
+  m_Script: {fileID: 11500000, guid: fab7b083d94da459192b29f12f7f0cc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &272309599
@@ -809,9 +811,9 @@ GameObject:
   - component: {fileID: 1450156038}
   - component: {fileID: 1450156039}
   - component: {fileID: 1450156034}
-  - component: {fileID: 1450156037}
+  - component: {fileID: 1450156041}
   m_Layer: 0
-  m_Name: Player
+  m_Name: Player2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -941,24 +943,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 3
---- !u!114 &1450156037
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1450156032}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 698280bffb2fc470895c5e2ec81b9d48, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hPText: {fileID: 3128225104444458080}
-  speed: 20
-  soundSE: {fileID: 8300000, guid: a19e13fefc1f543b78c362d53a97025e, type: 3}
-  cureSE: {fileID: 8300000, guid: 08f5f1884654a4ddaae235a3ac078aec, type: 3}
-  damageFlag: 0
-  cureFlag: 0
 --- !u!82 &1450156038
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1082,6 +1066,24 @@ RectTransform:
   m_AnchoredPosition: {x: 1.93, y: 2.79}
   m_SizeDelta: {x: 5, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1450156041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1450156032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ba88f768277f40c5b415ca5d04567b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hPText: {fileID: 3128225104444458080}
+  speed: 20
+  soundSE: {fileID: 8300000, guid: a19e13fefc1f543b78c362d53a97025e, type: 3}
+  cureSE: {fileID: 8300000, guid: 08f5f1884654a4ddaae235a3ac078aec, type: 3}
+  damageFlag2: 0
+  cureFlag2: 0
 --- !u!1 &1478101538
 GameObject:
   m_ObjectHideFlags: 0

@@ -22,6 +22,7 @@ public class GameManager2 : MonoBehaviour
     public GameObject alert2;
     public GameObject dropFood;
     public GameObject dropCureFood;
+    public GameObject potatoWall;
 
     private GameObject potatocaseObject;
     private GameObject hotdogObject;
@@ -182,8 +183,14 @@ public class GameManager2 : MonoBehaviour
             }
         }
 
-
-
+        if (seconds >= 62 && seconds < 70)
+        {
+            if (count >= 1)
+            {
+                count = 0;
+                GenPotatoWall();
+            }
+        }
 
 
     }
@@ -352,5 +359,12 @@ public class GameManager2 : MonoBehaviour
     void GenCureFood()
     {
         Instantiate(dropCureFood, new Vector3(-2f + 4.3f * Random.value, 6, 0), Quaternion.identity);
+    }
+
+    //ポテト壁
+
+    void GenPotatoWall()
+    {
+        Instantiate(potatoWall, new Vector3(-15,9, 0), Quaternion.identity);
     }
 }
