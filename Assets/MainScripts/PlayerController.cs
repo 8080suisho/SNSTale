@@ -20,6 +20,7 @@ public class PlayerController: MonoBehaviour
     private AudioSource audioSourceSE;
 
     public bool damageFlag = false;
+    public bool cureFlag = false;
 
     
     
@@ -74,7 +75,7 @@ public class PlayerController: MonoBehaviour
         }
 
         damageFlag = false;
-        
+        cureFlag = false;
     }
 
     void OnTriggerEnter2D(Collider2D coll)
@@ -91,6 +92,7 @@ public class PlayerController: MonoBehaviour
         {
             audioSourceSE.PlayOneShot(cureSE);
             this.hP += 20;
+            cureFlag = true;
             hPText.text = "しんらい : " + hP.ToString();
             
         }

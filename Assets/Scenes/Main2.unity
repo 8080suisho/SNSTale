@@ -190,6 +190,9 @@ MonoBehaviour:
     type: 3}
   hotdog: {fileID: 5764294625744969802, guid: 197cdc3c36e284ad2a4b4f71911733a2, type: 3}
   alert2: {fileID: 5334323454187088481, guid: 406e6ef8637ba4d5bb82d34ef95a3ab8, type: 3}
+  dropFood: {fileID: 649901498884211561, guid: afb067b9182154a5daaa12c2a854844d, type: 3}
+  dropCureFood: {fileID: 4469887309861065923, guid: a78d1265d093845d38729368d55a9666,
+    type: 3}
   soundSE: {fileID: 8300000, guid: e11ec2364f0394f43aa6fefe7843a0e7, type: 3}
   battleBGM: {fileID: 8300000, guid: 6b7a0e3c1947e435e9e8999199b648a9, type: 3}
 --- !u!82 &121980323
@@ -947,7 +950,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1450156032}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ba88f768277f40c5b415ca5d04567b1, type: 3}
+  m_Script: {fileID: 11500000, guid: 698280bffb2fc470895c5e2ec81b9d48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   hPText: {fileID: 3128225104444458080}
@@ -955,6 +958,7 @@ MonoBehaviour:
   soundSE: {fileID: 8300000, guid: a19e13fefc1f543b78c362d53a97025e, type: 3}
   cureSE: {fileID: 8300000, guid: 08f5f1884654a4ddaae235a3ac078aec, type: 3}
   damageFlag: 0
+  cureFlag: 0
 --- !u!82 &1450156038
 AudioSource:
   m_ObjectHideFlags: 0

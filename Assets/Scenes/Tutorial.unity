@@ -288,7 +288,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &242435579
 RectTransform:
   m_ObjectHideFlags: 0
@@ -955,6 +955,7 @@ MonoBehaviour:
   soundSE: {fileID: 8300000, guid: a19e13fefc1f543b78c362d53a97025e, type: 3}
   cureSE: {fileID: 8300000, guid: 08f5f1884654a4ddaae235a3ac078aec, type: 3}
   damageFlag: 0
+  cureFlag: 0
 --- !u!82 &1450156038
 AudioSource:
   m_ObjectHideFlags: 0

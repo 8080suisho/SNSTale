@@ -20,7 +20,7 @@ public class PlayerController2 : MonoBehaviour
     private AudioSource audioSourceSE;
 
     public bool damageFlag = false;
-
+    
 
 
     // Start is called before the first frame update
@@ -74,6 +74,7 @@ public class PlayerController2 : MonoBehaviour
         }
 
         damageFlag = false;
+        
 
     }
 
@@ -92,7 +93,7 @@ public class PlayerController2 : MonoBehaviour
             audioSourceSE.PlayOneShot(cureSE);
             this.hP += 20;
             hPText.text = "しんらい : " + hP.ToString();
-
+            
         }
 
     }

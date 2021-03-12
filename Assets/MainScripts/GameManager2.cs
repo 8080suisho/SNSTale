@@ -20,13 +20,17 @@ public class GameManager2 : MonoBehaviour
     public GameObject potatocase;
     public GameObject hotdog;
     public GameObject alert2;
+    public GameObject dropFood;
+    public GameObject dropCureFood;
+
     private GameObject potatocaseObject;
     private GameObject hotdogObject;
     private GameObject alert2Object;
 
+
     public AudioClip soundSE;
     public AudioClip battleBGM;
-    
+
 
     private AudioSource audioSource;
 
@@ -158,6 +162,23 @@ public class GameManager2 : MonoBehaviour
             {
                 count = 0;
                 BreakHotdog();
+            }
+        }
+
+        if (seconds >= 52 && seconds < 60)
+        {
+            if (count >= 1)
+            {
+                count = 0;
+                float randomCure = Random.value;
+                if(randomCure > 0.7)
+                {
+                    GenCureFood();
+                }
+                else
+                {
+                    GenFood();
+                }
             }
         }
 
@@ -319,5 +340,17 @@ public class GameManager2 : MonoBehaviour
     void BreakAlert2()
     {
         GameObject.Destroy(alert2Object);
+    }
+
+    //ハンバーガー隕石
+
+    void GenFood()
+    {
+        Instantiate(dropFood, new Vector3(-2f + 4.3f * Random.value, 6, 0), Quaternion.identity);
+    }
+
+    void GenCureFood()
+    {
+        Instantiate(dropCureFood, new Vector3(-2f + 4.3f * Random.value, 6, 0), Quaternion.identity);
     }
 }

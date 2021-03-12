@@ -23,10 +23,15 @@ public class DamageController : MonoBehaviour
     void Update()
     {
         bool playerDamage = script.damageFlag;
+        bool playerCure = script.cureFlag;
         
         if (playerDamage)
         {
             this.img.color = new Color(0.5f, 0f, 0f, 0.5f);
+        }
+        if (playerCure)
+        {
+            this.img.color = new Color(0f, 0.5f, 0f, 0.5f);
         }
         else
         {
