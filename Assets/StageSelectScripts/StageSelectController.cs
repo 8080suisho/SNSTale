@@ -5,10 +5,17 @@ using UnityEngine.SceneManagement;
 
 public class StageSelectController : MonoBehaviour
 {
+
+    public AudioClip menueBGM;
+
+    private AudioSource audioSource;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        audioSource = gameObject.GetComponent<AudioSource>();
+
+        BGMPlay();
     }
 
     // Update is called once per frame
@@ -30,5 +37,10 @@ public class StageSelectController : MonoBehaviour
     public void ToTencho()
     {
         SceneManager.LoadScene("Main2");
+    }
+
+    void BGMPlay()
+    {
+        audioSource.PlayOneShot(menueBGM);
     }
 }

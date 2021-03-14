@@ -10,6 +10,8 @@ public class GameManager2 : MonoBehaviour
     public GameObject comment2_2;
     public GameObject comment2_3;
     public GameObject comment2_4;
+    public GameObject comment2_5;
+    public GameObject comment2_6;
 
     public GameObject foodBullet;
     public GameObject foodBullet2;
@@ -183,12 +185,40 @@ public class GameManager2 : MonoBehaviour
             }
         }
 
-        if (seconds >= 62 && seconds < 70)
+        if (seconds >= 62 && seconds < 63)
         {
             if (count >= 1)
             {
                 count = 0;
                 GenPotatoWall();
+            }
+        }
+
+        if (seconds >= 76f && seconds < 77f)
+        {
+            if (count >= 1f)
+            {
+                count = 0;
+                audioSource.Stop();
+                AppearComment2_5();
+            }
+        }
+
+        if (seconds >= 78f && seconds < 79f)
+        {
+            if (count >= 1f)
+            {
+                count = 0;
+                AppearComment2_6();
+            }
+        }
+
+        if (seconds >= 81 && seconds < 82f)
+        {
+            if (count >= 1f)
+            {
+                count = 0;
+                ToClear();
             }
         }
 
@@ -365,6 +395,25 @@ public class GameManager2 : MonoBehaviour
 
     void GenPotatoWall()
     {
-        Instantiate(potatoWall, new Vector3(-15,9, 0), Quaternion.identity);
+        Instantiate(potatoWall, new Vector3(-16,9, 0), Quaternion.identity);
+    }
+
+    //エンディング
+    void AppearComment2_5()
+    {
+        audioSource.PlayOneShot(soundSE);
+        Instantiate(comment2_5, new Vector3(-1.5f, 3f, 0), Quaternion.identity);
+    }
+
+    void AppearComment2_6()
+    {
+        audioSource.PlayOneShot(soundSE);
+        Instantiate(comment2_6, new Vector3(-1.5f, 2.3f, 0), Quaternion.identity);
+    }
+
+    //クリア画面へ
+    void ToClear()
+    {
+        SceneManager.LoadScene("GameClear2");
     }
 }

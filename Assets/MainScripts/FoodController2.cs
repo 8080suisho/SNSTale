@@ -13,7 +13,7 @@ public class FoodController2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position += new Vector3(-0.1f, 0, 0);
+        transform.position += new Vector3(-0.07f, 0, 0);
         if (this.transform.position.x < -5.5)
         {
             GameObject.Destroy(this.gameObject);
